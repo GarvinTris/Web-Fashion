@@ -1,205 +1,428 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evolve Gear - Fashion Tech Landing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolve Gear - Fashion Tech Landing</title>
 
-<!-- Font Modern -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<style>
-/* --- Global Reset & Base --- */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Poppins', sans-serif; color:#1a1a1a; background:#fff; line-height:1.6; scroll-behavior:smooth;}
-a { text-decoration:none; color:inherit; }
-ul { list-style:none; }
-img { max-width:100%; display:block; }
-h1,h2,h3,h4 { font-family:'Montserrat', sans-serif; font-weight:700; }
-button { cursor:pointer; border:none; }
+    <style>
+        /* ==========================
+           GLOBAL STYLE
+        =========================== */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Poppins', sans-serif; color:#1a1a1a; background:#fff; line-height:1.6; scroll-behavior:smooth; }
+        a { text-decoration:none; color:inherit; }
+        ul { list-style:none; }
+        img { max-width:100%; display:block; }
+        h1, h2, h3, h4 { font-family:'Montserrat', sans-serif; font-weight:700; }
+        button { cursor:pointer; border:none; }
 
-/* --- Header --- */
-header { position:sticky; top:0; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.05); padding:15px 5%; z-index:1000; }
-nav { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; }
-.logo { font-size:1.8em; font-weight:700; letter-spacing:1.5px; transition:color 0.3s ease; }
-.logo:hover { color:#e74c3c; }
-nav ul { display:flex; gap:30px; }
-nav ul li a { position:relative; font-weight:600; }
-nav ul li a::after { content:''; position:absolute; left:0; bottom:-5px; width:0; height:2px; background:#e74c3c; transition:width 0.3s; }
-nav ul li a:hover::after { width:100%; }
-.nav-icons { display:flex; gap:20px; font-size:1.2em; }
-.nav-icons a { color:#555; transition:color 0.3s ease, transform 0.2s ease; }
-.nav-icons a:hover { color:#e74c3c; transform:scale(1.1); }
+        /* ==========================
+           HEADER
+        =========================== */
+        header {
+            position:sticky;
+            top:0;
+            background:#fff;
+            box-shadow:0 2px 10px rgba(0,0,0,0.05);
+            padding:15px 5%;
+            z-index:1000;
+        }
+        nav {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            max-width:1200px;
+            margin:auto;
+        }
+        .logo {
+            font-size:1.8em;
+            font-weight:700;
+            letter-spacing:1.5px;
+            transition:color .3s;
+        }
+        .logo:hover { color:#e74c3c; }
+        nav ul { display:flex; gap:30px; }
+        nav ul li a {
+            position:relative;
+            font-weight:600;
+        }
+        nav ul li a::after {
+            content:'';
+            position:absolute;
+            left:0;
+            bottom:-5px;
+            width:0;
+            height:2px;
+            background:#e74c3c;
+            transition:width .3s;
+        }
+        nav ul li a:hover::after { width:100%; }
 
-/* --- Hero Section --- */
-.hero-section { min-height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:linear-gradient(135deg,#000,#222); color:#fff; position:relative; padding:100px 5%; }
-.hero-content { max-width:800px; z-index:2; animation:fadeUp 1.2s ease forwards; }
-.hero-content .tagline { font-weight:600; color:#ccc; letter-spacing:2px; margin-bottom:10px; }
-.hero-section h1 { font-size:3em; margin-bottom:20px; }
-.hero-image-wrapper { position:absolute; top:0; left:50%; transform:translateX(-50%); width:100%; height:100%; z-index:1; overflow:hidden; }
-.hero-image-wrapper img { width:100%; height:100%; object-fit:cover; opacity:0.3; }
-@keyframes fadeUp { 0%{opacity:0;transform:translateY(30px);} 100%{opacity:1;transform:translateY(0);} }
+        .nav-icons {
+            display:flex;
+            gap:20px;
+            font-size:1.2em;
+        }
+        .nav-icons a {
+            color:#555;
+            transition:color .3s, transform .2s;
+        }
+        .nav-icons a:hover {
+            color:#e74c3c;
+            transform:scale(1.1);
+        }
 
-/* --- CTA Buttons --- */
-.cta-button { display:inline-flex; align-items:center; gap:10px; padding:15px 40px; border-radius:50px; font-weight:700; letter-spacing:1px; transition:all 0.3s ease; text-transform:uppercase; }
-.primary-cta { background:#1a1a1a; color:#fff; }
-.primary-cta:hover { background:linear-gradient(135deg,#e74c3c,#ff7e5f); transform:translateY(-3px); }
-.secondary-cta { background:transparent; border:2px solid #1a1a1a; color:#1a1a1a; padding:13px 33px; }
-.secondary-cta:hover { background:#1a1a1a; color:#fff; transform:translateY(-3px); }
+        /* ==========================
+           HERO SECTION
+        =========================== */
+        .hero-section {
+            min-height:90vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            background:linear-gradient(135deg,#000,#222);
+            color:#fff;
+            position:relative;
+            padding:100px 5%;
+        }
+        .hero-content {
+            max-width:800px;
+            z-index:2;
+            animation:fadeUp 1.2s ease forwards;
+        }
+        .hero-content .tagline {
+            font-weight:600;
+            color:#ccc;
+            letter-spacing:2px;
+            margin-bottom:10px;
+        }
+        .hero-section h1 {
+            font-size:3em;
+            margin-bottom:20px;
+        }
 
-/* --- Sections --- */
-section { padding:80px 5%; max-width:1200px; margin:0 auto; overflow:hidden; }
-.section-header { text-align:center; margin-bottom:50px; }
-h3 { font-size:2.5em; position:relative; display:inline-block; margin-bottom:20px; }
-h3::after { content:''; position:absolute; left:50%; transform:translateX(-50%); bottom:-10px; width:60px; height:4px; background:#e74c3c; border-radius:2px; }
+        .hero-image-wrapper {
+            position:absolute;
+            top:0;
+            left:50%;
+            transform:translateX(-50%);
+            width:100%;
+            height:100%;
+            overflow:hidden;
+            z-index:1;
+        }
+        .hero-image-wrapper img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            opacity:0.3;
+        }
 
-/* --- Product Grid --- */
-.product-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
-.product-card { position:relative; border-radius:15px; overflow:hidden; transition:transform 0.3s ease, box-shadow 0.3s ease; }
-.product-card:hover { transform:scale(1.05); box-shadow:0 15px 30px rgba(0,0,0,0.2); }
-.product-overlay { position:absolute; bottom:0; left:0; width:100%; padding:15px; background:linear-gradient(to top, rgba(0,0,0,0.7), transparent); color:#fff; opacity:0; transition:opacity 0.3s ease; }
-.product-card:hover .product-overlay { opacity:1; }
+        @keyframes fadeUp {
+            0% { opacity:0; transform:translateY(30px); }
+            100% { opacity:1; transform:translateY(0); }
+        }
 
-/* --- Feature Cards --- */
-.feature-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
-.feature-card { background:#f8f8f8; padding:30px; border-radius:15px; text-align:center; transition:transform 0.3s ease; }
-.feature-card:hover { transform:translateY(-5px); }
-.feature-card .icon { font-size:2.5em; margin-bottom:15px; color:#e74c3c; }
+        /* CTA Buttons */
+        .cta-button {
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            padding:15px 40px;
+            border-radius:50px;
+            font-weight:700;
+            letter-spacing:1px;
+            transition:all .3s;
+            text-transform:uppercase;
+        }
+        .primary-cta {
+            background:#1a1a1a;
+            color:#fff;
+        }
+        .primary-cta:hover {
+            background:linear-gradient(135deg,#e74c3c,#ff7e5f);
+            transform:translateY(-3px);
+        }
+        .secondary-cta {
+            background:transparent;
+            border:2px solid #1a1a1a;
+            color:#1a1a1a;
+            padding:13px 33px;
+        }
+        .secondary-cta:hover {
+            background:#1a1a1a;
+            color:#fff;
+            transform:translateY(-3px);
+        }
 
-/* --- Story Section --- */
-.story-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; }
-.story-card { border-radius:15px; overflow:hidden; position:relative; height:300px; background-size:cover; background-position:center; }
-.story-overlay { position:absolute; bottom:0; left:0; width:100%; padding:20px; background:linear-gradient(to top, rgba(0,0,0,0.7), transparent); color:#fff; }
+        /* ==========================
+           SECTION DEFAULT
+        =========================== */
+        section {
+            padding:80px 5%;
+            max-width:1200px;
+            margin:auto;
+            overflow:hidden;
+        }
+        h3 {
+            font-size:2.5em;
+            text-align:center;
+            position:relative;
+            margin-bottom:40px;
+        }
+        h3::after {
+            content:'';
+            position:absolute;
+            left:50%;
+            bottom:-10px;
+            transform:translateX(-50%);
+            width:60px;
+            height:4px;
+            background:#e74c3c;
+            border-radius:2px;
+        }
 
-/* --- Join / Newsletter --- */
-.join-section form { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:20px; }
-.join-section input[type=email] { padding:15px 20px; border-radius:50px; border:2px solid #1a1a1a; width:300px; max-width:100%; }
-.join-section button { padding:15px 35px; }
+        /* Product Grid */
+        .product-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+        .product-card {
+            position:relative;
+            border-radius:15px;
+            overflow:hidden;
+            transition:transform .3s, box-shadow .3s;
+        }
+        .product-card:hover {
+            transform:scale(1.05);
+            box-shadow:0 15px 30px rgba(0,0,0,0.2);
+        }
+        .product-overlay {
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            padding:15px;
+            background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color:#fff;
+            opacity:0;
+            transition:opacity .3s;
+        }
+        .product-card:hover .product-overlay { opacity:1; }
 
-/* --- Footer --- */
-footer { background:#1a1a1a; color:#fff; padding:50px 5%; }
-footer a { color:#ccc; transition:color 0.3s; }
-footer a:hover { color:#e74c3c; }
-.footer-content { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:30px; }
+        /* Feature Cards */
+        .feature-cards {
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+        .feature-card {
+            background:#f8f8f8;
+            padding:30px;
+            border-radius:15px;
+            text-align:center;
+            transition:transform .3s;
+        }
+        .feature-card:hover { transform:translateY(-5px); }
+        .feature-card .icon {
+            font-size:2.5em;
+            margin-bottom:15px;
+            color:#e74c3c;
+        }
 
-</style>
+        /* Stories */
+        .story-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:30px;
+        }
+        .story-card {
+            height:300px;
+            border-radius:15px;
+            overflow:hidden;
+            background-size:cover;
+            background-position:center;
+            position:relative;
+        }
+        .story-overlay {
+            position:absolute;
+            bottom:0;
+            width:100%;
+            padding:20px;
+            background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color:#fff;
+        }
+
+        /* Join Section */
+        .join-section form {
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:10px;
+            margin-top:20px;
+        }
+        .join-section input[type=email] {
+            padding:15px 20px;
+            border-radius:50px;
+            border:2px solid #1a1a1a;
+            width:300px;
+        }
+
+        /* Footer */
+        footer {
+            background:#1a1a1a;
+            color:#fff;
+            padding:50px 5%;
+        }
+        footer a {
+            color:#ccc;
+            transition:color .3s;
+        }
+        footer a:hover { color:#e74c3c; }
+
+        .footer-content {
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:30px;
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-<nav>
-    <a href="#" class="logo">EVOLVE GEAR</a>
-    <ul>
-        <li><a href="#produk">Produk</a></li>
-        <li><a href="#explore">Eksplorasi</a></li>
-        <li><a href="#stories">Cerita</a></li>
-        <li><a href="#join">Gabung</a></li>
-    </ul>
-    <div class="nav-icons">
-        <a href="#"><i class="fas fa-search"></i></a>
-        <a href="#"><i class="fas fa-shopping-bag"></i></a>
-    </div>
-</nav>
-</header>
+    <!-- ========================
+         HEADER
+    ========================== -->
+    <header>
+        <nav>
+            <a href="#" class="logo">EVOLVE GEAR</a>
 
-<main>
-<section id="hero" class="hero-section">
-    <div class="hero-content">
-        <p class="tagline">DEFINISIKAN GAYA DIGITALMU</p>
-        <h1>PERFORMA TANPA BATAS</h1>
-        <a href="#produk" class="cta-button primary-cta">LIHAT KOLEKSI</a>
-    </div>
-    <div class="hero-image-wrapper">
-        <img src="https://via.placeholder.com/1200x800/222222/FFFFFF?text=Fashion+Keyboard" alt="Produk Fashion Tech">
-    </div>
-</section>
+            <ul>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#explore">Eksplorasi</a></li>
+                <li><a href="#stories">Cerita</a></li>
+                <li><a href="#join">Gabung</a></li>
+            </ul>
 
-<section id="new-arrivals">
-<h3>BARU HADIR</h3>
-<div class="product-grid">
-    <div class="product-card">
-        <img src="https://via.placeholder.com/300x300/000/fff?text=Keyboard+X" alt="">
-        <div class="product-overlay"><h4>Keyboard X</h4><p>Desain minimalis, performa maksimal.</p></div>
-    </div>
-    <div class="product-card">
-        <img src="https://via.placeholder.com/300x300/111/fff?text=Mouse+Y" alt="">
-        <div class="product-overlay"><h4>Mouse Y</h4><p>Respons cepat dan ergonomis.</p></div>
-    </div>
-    <div class="product-card">
-        <img src="https://via.placeholder.com/300x300/222/fff?text=Monitor+Z" alt="">
-        <div class="product-overlay"><h4>Monitor Z</h4><p>Resolusi tinggi untuk gaming/profesional.</p></div>
-    </div>
-</div>
-<a href="#produk" class="cta-button secondary-cta">SEMUA PRODUK <i class="fas fa-arrow-right"></i></a>
-</section>
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </nav>
+    </header>
 
-<section id="explore" class="feature-cards">
-<div class="feature-card"><i class="fas fa-bolt icon"></i><h4>Performa Ekstrem</h4><p>Kecepatan dan responsivitas tiada tanding.</p></div>
-<div class="feature-card"><i class="fas fa-palette icon"></i><h4>Desain Revolusioner</h4><p>Minimalis bertemu fungsionalitas maksimal.</p></div>
-<div class="feature-card"><i class="fas fa-shield-alt icon"></i><h4>Daya Tahan Tinggi</h4><p>Dari material premium hingga rekayasa presisi.</p></div>
-</section>
+    <!-- ========================
+         HERO
+    ========================== -->
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <p class="tagline">DEFINISIKAN GAYA DIGITALMU</p>
+                <h1>PERFORMA TANPA BATAS</h1>
+                <a href="#produk" class="cta-button primary-cta">LIHAT KOLEKSI</a>
+            </div>
 
-<section id="stories">
-<h3>CERITA DI BALIK EVOLVE</h3>
-<div class="story-grid">
-<div class="story-card" style="background-image:url('https://via.placeholder.com/600x400/34495e/fff?text=Pro+Gamer');">
-    <div class="story-overlay"><h4>Dikuasai oleh Pro</h4><p>Gamer profesional menggunakan gear kami.</p></div>
-</div>
-<div class="story-card" style="background-image:url('https://via.placeholder.com/300x200/2c3e50/fff?text=Creator');">
-    <div class="story-overlay"><h4>Kreativitas Tanpa Batas</h4><p>Memberdayakan kreator wujudkan visi.</p></div>
-</div>
-</div>
-</section>
+            <div class="hero-image-wrapper">
+                <img src="https://via.placeholder.com/1200x800/222222/FFFFFF?text=Fashion+Keyboard" alt="Produk Fashion Tech">
+            </div>
+        </section>
 
-<section id="join" class="join-section">
-<h3>GABUNG KOMUNITAS EVOLVE</h3>
-<form id="newsletterForm">
-<input type="email" placeholder="Masukkan email" required>
-<button type="submit" class="cta-button primary-cta">DAFTAR</button>
-</form>
-</section>
-</main>
+        <!-- ========================
+             NEW ARRIVALS
+        ========================== -->
+        <section id="new-arrivals">
+            <h3>BARU HADIR</h3>
 
-<footer>
-<div class="footer-content">
-<div>
-<h4>EVOLVE GEAR</h4>
-<p>&copy; 2025 Semua Hak Cipta Dilindungi.</p>
-</div>
-<div>
-<h4>Produk</h4>
-<ul>
-<li><a href="#produk">Keyboard</a></li>
-<li><a href="#produk">Mouse</a></li>
-<li><a href="#produk">Monitor</a></li>
-<li><a href="#produk">Audio</a></li>
-</ul>
-</div>
-<div>
-<h4>Perusahaan</h4>
-<ul>
-<li><a href="#">Tentang Kami</a></li>
-<li><a href="#">Karir</a></li>
-<li><a href="#">Blog</a></li>
-</ul>
-</div>
-<div>
-<h4>Dukungan</h4>
-<ul>
-<li><a href="#">FAQ</a></li>
-<li><a href="#">Garansi</a></li>
-<li><a href="#">Kontak</a></li>
-</ul>
-</div>
-<div>
-<h4>Ikuti Kami</h4>
-<a href="#"><i class="fab fa-facebook-f"></i></a>
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-twitter"></i></a>
-</div>
-</div>
-</footer>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x300/000/fff?text=Keyboard+X" alt="">
+                    <div class="product-overlay">
+                        <h4>Keyboard X</h4>
+                        <p>Desain minimalis, performa maksimal.</p>
+                    </div>
+                </div>
 
-</body>
-</html>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x300/111/fff?text=Mouse+Y" alt="">
+                    <div class="product-overlay">
+                        <h4>Mouse Y</h4>
+                        <p>Respons cepat dan ergonomis.</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x300/222/fff?text=Monitor+Z" alt="">
+                    <div class="product-overlay">
+                        <h4>Monitor Z</h4>
+                        <p>Resolusi tinggi untuk gaming/profesional.</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#produk" class="cta-button secondary-cta">
+                SEMUA PRODUK <i class="fas fa-arrow-right"></i>
+            </a>
+        </section>
+
+        <!-- ========================
+             FEATURES
+        ========================== -->
+        <section id="explore" class="feature-cards">
+            <div class="feature-card">
+                <i class="fas fa-bolt icon"></i>
+                <h4>Performa Ekstrem</h4>
+                <p>Kecepatan dan responsivitas tiada tanding.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-palette icon"></i>
+                <h4>Desain Revolusioner</h4>
+                <p>Minimalis bertemu fungsionalitas maksimal.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-shield-alt icon"></i>
+                <h4>Daya Tahan Tinggi</h4>
+                <p>Material premium dengan rekayasa presisi.</p>
+            </div>
+        </section>
+
+        <!-- ========================
+             STORIES
+        ========================== -->
+        <section id="stories">
+            <h3>CERITA DI BALIK EVOLVE</h3>
+
+            <div class="story-grid">
+                <div class="story-card" style="background-image:url('https://via.placeholder.com/600x400/34495e/fff?text=Pro+Gamer');">
+                    <div class="story-overlay">
+                        <h4>Dikuasai oleh Pro</h4>
+                        <p>Gamer profesional menggunakan gear kami.</p>
+                    </div>
+                </div>
+
+                <div class="story-card" style="background-image:url('https://via.placeholder.com/300x200/2c3e50/fff?text=Creator');">
+                    <div class="story-overlay">
+                        <h4>Kreativitas Tanpa Batas</h4>
+                        <p>Memberdayakan kreator untuk berkarya.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             JOIN
+        ========================== -->
+        <section id="join" class="join-section">
+            <h3>GABUNG KOMUNITAS EVOLVE</h3>
+
+            <form id="newsletterForm">
+                <input type="email" placeholder="Masukkan email" required>
